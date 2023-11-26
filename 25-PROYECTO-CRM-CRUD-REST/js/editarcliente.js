@@ -132,13 +132,12 @@ document.addEventListener('DOMContentLoaded', async () => {
   
           // Actualizar el cliente en la base de datos
           const requestUpdate = objectStore.put(cliente);
-          // Obtener la hora actual
-          const hora = new Date().toLocaleTimeString();
+
           requestUpdate.onsuccess = () => {
             console.log('Cliente actualizado en la base de datos');
-            mostrarToast("Cliente editado con éxito");
 
-            const fecha = new Date().toLocaleDateString();
+            //Toast del mensaje
+            mostrarToast("Cliente editado con éxito");
 
             //Guardado en historial
             guardarHistorialPersistente(`El cliente ${nombreClienteEliminado} con id:"${idClienteEliminado}" fue editado `)

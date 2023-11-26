@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const clienteArribaIzquierda = document.querySelector('a[href="/"]');
 
   // Paginación
+  
   const pageSize = 4; // Número máximo de clientes por página
   let currentPage = 1; // Página actual, comienza en la primera página
   let numeroTotalPaginas = 1; // Número total de páginas, inicializado a 1
@@ -44,18 +45,19 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // Obtener el div existente
+  // Obtener el div existente en el html para poner debajo los botones
   const divExistente = document.querySelector('.flex.flex-col.mt-10');
 
   // Insertar el contenedor después del div existente
   divExistente.insertAdjacentElement('afterend', contenedorBotones);
 
-  // Aplicar estilos desde JavaScript
+  // Aplicar css desde js
   const estiloBoton = 'font-size: 24px; padding: 10px 20px; cursor: pointer; background-color: #38b2ac; color: #ffffff; border: none; border-radius: 5px; margin: 0 10px;';
 
   izquierdaButton.style.cssText = estiloBoton;
   derechaButton.style.cssText = estiloBoton;
 
+  //llamada a la base de datos para actualizar el numero de clientes, cargarlos y mostrarlo por pantalla
   const updateVisibleRows = () => {
     abrirBaseDeDatos("CRM", 1)
       .then((db) => {
@@ -71,7 +73,6 @@ document.addEventListener("DOMContentLoaded", () => {
       .catch((error) => console.error(error));
   };
   
-  // Llamada inicial para asegurar que solo se muestran los elementos de la primera página
   updateVisibleRows();
 
   function actualizarNumeroPagina() {

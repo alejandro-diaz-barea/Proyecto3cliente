@@ -1,3 +1,5 @@
+
+
 // historial 
 const historialBtn = document.createElement("button");
 historialBtn.id = "historialBtn";
@@ -23,7 +25,6 @@ historialBtn.addEventListener("click", () => {
 });
 
 function mostrarHistorialEnPantalla() {
-  // Oculta solo el contenido de la tabla
   const contenidoClientes = document.querySelector("#listado-clientes");
   if (contenidoClientes) {
     contenidoClientes.style.visibility = "hidden";

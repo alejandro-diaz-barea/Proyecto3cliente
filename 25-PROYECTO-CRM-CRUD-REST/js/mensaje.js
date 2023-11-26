@@ -44,6 +44,9 @@ strongElement.textContent = 'CRM - INDEXEDDB';
  document.body.appendChild(toastContainer);
 
 
+
+ //Funcion a exportar para mostrar los mensajes
+
  export function mostrarToast(mensaje) {
     const toastDiv = document.querySelector("#toast");
     const toastDivBody = document.querySelector(".toast-body");
